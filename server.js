@@ -1,1 +1,1 @@
-console.log("I have a new server");
+console.log("I have a gnu server");
