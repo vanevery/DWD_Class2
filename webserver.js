@@ -14,6 +14,11 @@ app.get('/somethingelse', function (req, res) {
   res.send('<html><body><h1>Something Else' + count + '</h1></body></html>')
 })
 
+app.get('/formpost', function (req, res) {
+	console.log("They submitted: " + req.query.textfield);
+	res.send("You submitted: " + req.query.textfield);
+})
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
