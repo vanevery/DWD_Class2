@@ -3,13 +3,15 @@ var app = express()
 
 app.use(express.static('public'));
 
-
 app.get('/', function (req, res) {
   res.send('Hello World!')
 })
 
+var count = 0;
+
 app.get('/somethingelse', function (req, res) {
-  res.send('<html><body><h1>Something Else</h1></body></html>')
+	count++;
+  res.send('<html><body><h1>Something Else' + count + '</h1></body></html>')
 })
 
 app.listen(3000, function () {
