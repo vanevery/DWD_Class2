@@ -1,6 +1,10 @@
 var express = require('express')
 var app = express()
 
+var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: true }); // for parsing form data
+app.use(urlencodedParser); 
+
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
@@ -20,6 +24,11 @@ app.get('/formpost', function (req, res) {
 	console.log("They submitted: " + req.query.textfield);
 	res.send("You submitted: " + req.query.textfield);
 	submissions.push(req.query.textfield);
+})
+
+app.post("/formpost", function(req, res) {
+	console.log("They submitted: " + req.body.textfield);
+	res.send("You Submitted: " + req.body.textfield)
 })
 
 app.get('/display', function(req, res) {
