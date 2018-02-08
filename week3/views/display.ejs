@@ -1,0 +1,12 @@
+<html>
+	<head><title>Display Template</title>
+
+		<link src="styles.css">
+	</head>
+	<body>
+		<h1>All Submissions</h1>
+		<% for (var i = 0; i < submissions_on_page.length; i++) { %>
+			<%= submissions_on_page[i].submission %> <br />
+		<% } %>
+	</body>
+</html>
