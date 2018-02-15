@@ -8,10 +8,17 @@ var data = [];
 app.get('/save', function(req, res) {
 	var datatosave = {x: req.query.x, y: req.query.y};
 	data.push(datatosave);
+
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
 	res.send('{response: "thanks"}');	
 });
 
 app.get("/send", function(req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
 	res.send(data);
 })
 
